@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#14191b">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Schmiede">
+<meta name="description" content="Deine kompakte Schmiedestrategie für Skyrim – auch offline.">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="apple-touch-icon" href="./apple-touch-icon.png">
+<link rel="icon" type="image/png" href="./icon-192.png">
+<title>Skyrim · Schmiedestrategie</title>
+<style>
+:root{color-scheme:dark;--bg:#14191b;--panel:#1c2326;--text:#edf0e9;--muted:#adb8b6;--gold:#d7bc80;--green:#244a3c;--blue:#25445c;--line:#354044}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.5 'Segoe UI',sans-serif}main{max-width:940px;margin:auto;padding:30px 24px 22px}.eyebrow{font-size:11px;letter-spacing:.22em;color:var(--gold);font-weight:700}h1{font-family:Georgia,serif;font-size:clamp(25px,4.8vw,35px);font-weight:400;line-height:1.15;margin:8px 0 14px}p{margin:0}.intro{color:var(--muted);max-width:700px;font-size:14px}.legend{display:flex;flex-wrap:wrap;gap:8px 22px;margin:19px 0 10px;font-size:13px}.key{display:flex;align-items:center;gap:8px}.swatch{width:12px;height:12px;border:1px solid #ffffff35;border-radius:3px;background:var(--green)}.swatch.blue{background:var(--blue)}.hint{font-size:12px;color:var(--muted);margin-bottom:18px}.hint strong{color:var(--text);font-weight:600}.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--panel)}.board{position:relative;isolation:isolate}table{border-collapse:separate;border-spacing:0;table-layout:fixed;width:100%;min-width:530px}caption{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}col:first-child{width:20%}col{width:16%}thead th{height:45px;font-size:12px;color:var(--muted);font-weight:600;border-bottom:1px solid var(--line);text-align:center}thead th:first-child{text-align:left;padding-left:16px}tbody tr{height:59px}tbody th{text-align:left;padding:0 12px 0 16px;font-size:13px;font-weight:500;border-bottom:1px solid var(--line);color:#d7dedd}tbody tr:last-child th{border-bottom:0}td{text-align:center;font-size:15px;font-weight:600;border-left:4px solid var(--panel);border-right:4px solid var(--panel);border-bottom:4px solid var(--panel);border-top:4px solid var(--panel);background-clip:padding-box;border-radius:9px}td.raw{background-color:var(--green);color:#e1f5e8}td.up{background-color:var(--blue);color:#e0effc}tbody th button{all:unset;cursor:pointer;display:flex;align-items:center;width:100%;min-height:59px}tbody th button:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}tbody tr.chosen th{color:var(--gold)}.band{position:absolute;left:0;right:0;pointer-events:none;background:#e7ca7b12;border-top:1px solid #e7ca7b90;border-bottom:1px solid #e7ca7b90;z-index:2;display:none}.status{min-height:40px;margin-top:12px;color:var(--muted);font-size:12px}.status strong{color:var(--gold);font-weight:600}footer{border-top:1px solid var(--line);padding-top:12px;font-size:11px;color:var(--muted);display:flex;justify-content:space-between;gap:12px}.print{background:none;border:0;color:var(--muted);font:inherit;cursor:pointer;padding:0}.print:hover{color:var(--text)}
+@media(max-width:650px){main{padding:20px 12px 16px}tbody tr{height:54px}tbody th button{min-height:54px}td{font-size:13px}thead th:first-child,tbody th{padding-left:10px}tbody th{font-size:12px}.intro{font-size:13px}.legend{font-size:12px;gap:8px 14px}h1{margin-bottom:12px}.hint{margin-bottom:12px}.status{min-height:49px}}
+@media print{:root{color-scheme:light;--bg:#fff;--panel:#fff;--text:#172323;--muted:#435151;--line:#bac5c4;--green:#dfefe5;--blue:#e0ecf8}body{-webkit-print-color-adjust:exact;print-color-adjust:exact}main{max-width:none;padding:0}td.raw,td.up{color:#172323}tbody th,.hint strong{color:#172323}.band,.status,.print{display:none!important}.scroll{overflow:visible}table{min-width:0}footer{margin-top:15px}.eyebrow{color:#66512b}h1{font-size:28px}tr{break-inside:avoid}@page{size:A4 landscape;margin:18mm}}
+
+.materials{display:none}.app-info{margin:16px 0;font-size:13px;color:var(--muted)}
+.app-info summary{cursor:pointer;min-height:44px;display:flex;align-items:center;color:var(--gold)}
+.app-info p{margin-bottom:10px}.offline-state{font-size:12px;color:var(--muted);margin:12px 0}
+button{touch-action:manipulation}footer .print{min-height:44px;min-width:64px}
+@media(max-width:650px){
+ main{padding:calc(18px + env(safe-area-inset-top)) max(14px,env(safe-area-inset-right)) calc(18px + env(safe-area-inset-bottom)) max(14px,env(safe-area-inset-left))}
+ .mobile-ready .materials{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 12px}
+ .materials button{flex:1 1 28%;min-height:48px;border:1px solid var(--line);border-radius:10px;background:var(--panel);color:var(--text);font:600 15px 'Segoe UI',sans-serif;padding:10px}
+ .materials button[aria-pressed=true]{background:var(--gold);color:var(--bg);border-color:var(--gold)}
+ .materials button:focus-visible{outline:2px solid white;outline-offset:2px}
+ .mobile-ready table{min-width:0}.mobile-ready col:first-child{width:48%}.mobile-ready col:not(:first-child){width:52%}
+ .mobile-ready [data-material]{display:none}.mobile-ready [data-material].active-material{display:table-cell}
+ .mobile-ready col[data-material].active-material{display:table-column}
+ tbody th,thead th{font-size:14px}td{font-size:17px}tbody tr{height:55px}tbody th button{min-height:55px}
+ .intro{font-size:15px}.legend{font-size:13px}.hint{font-size:13px}.status{font-size:13px}footer{align-items:center}
+}
+@media print{.materials,.app-info,.offline-state{display:none!important}.mobile-ready [data-material]{display:table-cell!important}.mobile-ready col[data-material]{display:table-column!important}}
+</style>
+</head>
+<body>
+<main>
+<header><div class="eyebrow">SKYRIM · SCHMIEDEKUNST</div><h1>Das Richtige schmieden.</h1>
+<p class="intro">Links deine maximal erreichbare Qualität suchen; rechts im verfügbaren Material den Gegenstand wählen.</p>
+<div class="legend" aria-label="Legende"><span class="key"><i class="swatch" aria-hidden="true"></i>Grün = unverbessert lassen</span><span class="key"><i class="swatch blue" aria-hidden="true"></i>Blau = herstellen &amp; verbessern</span></div>
+<p class="hint">Bei Blau immer <strong>bis zur Qualität deiner Zeile</strong> verbessern – auch innerhalb eines langen Feldes.</p></header>
+<nav class="materials" aria-label="Material auswählen"></nav>
+<div class="scroll"><div class="board"><div class="band" aria-hidden="true"></div>
+<table><caption>Schmiedestrategie nach maximal erreichbarer Qualität und Material. Grüne Felder unverbessert lassen; blaue Felder auf die jeweilige Zeilenqualität verbessern.</caption>
+<colgroup><col><col><col><col><col><col></colgroup>
+<thead><tr><th scope="col">Max. Qualität</th><th scope="col">Leder</th><th scope="col">Eisen</th><th scope="col">Stahl</th><th scope="col">Orkisch</th><th scope="col">Zwergisch</th></tr></thead>
+<tbody>
+<tr><th scope="row"><button type="button" aria-pressed="false">Unverbessert</button></th><td rowspan="4" class="raw" aria-label="Armschienen, unverbessert lassen">Armschienen</td><td rowspan="6" class="raw" aria-label="Dolch, unverbessert lassen">Dolch</td><td rowspan="2" class="raw" aria-label="Helm, unverbessert lassen">Helm</td><td rowspan="3" class="raw" aria-label="Helm, unverbessert lassen">Helm</td><td rowspan="3" class="raw" aria-label="Bogen, unverbessert lassen">Bogen</td></tr>
+<tr><th scope="row"><button type="button" aria-pressed="false">Fine (14)</button></th></tr>
+<tr><th scope="row"><button type="button" aria-pressed="false">Superior (22)</button></th><td class="up" aria-label="Rüstung, auf die Qualität der jeweiligen Zeile verbessern">Rüstung</td></tr>
+<tr><th scope="row"><button type="button" aria-pressed="false">Exquisite (40)</button></th><td rowspan="4" class="up" aria-label="Helm, auf die Qualität der jeweiligen Zeile verbessern">Helm</td><td rowspan="4" class="up" aria-label="Helm, auf die Qualität der jeweiligen Zeile verbessern">Helm</td><td rowspan="4" class="up" aria-label="Bogen, auf die Qualität der jeweiligen Zeile verbessern">Bogen</td></tr>
+<tr><th scope="row"><button type="button" aria-pressed="false">Flawless (57)</button></th><td rowspan="3" class="up" aria-label="Helm, auf die Qualität der jeweiligen Zeile verbessern">Helm</td></tr>
+<tr><th scope="row"><button type="button" aria-pressed="false">Epic (74)</button></th></tr>
+<tr><th scope="row"><button type="button" aria-pressed="false">Legendary (91)</button></th><td class="up" aria-label="Helm, auf die Qualität der jeweiligen Zeile verbessern">Helm</td></tr>
+</tbody></table></div></div>
+<p class="status" aria-live="polite">Qualität links anklicken, um eine Zeile zu markieren.</p>
+<p class="offline-state" role="status">Offline-Speicherung wird vorbereitet …</p>
+<details class="app-info"><summary>Auf dem iPhone installieren</summary><p>Diese Seite über ihre HTTPS-Webadresse in Safari öffnen. Teilen → Zum Home-Bildschirm → gegebenenfalls „Als Web-App öffnen“ aktivieren → Hinzufügen.</p><p>Für unterwegs: App vom Home-Bildschirm einmal mit Internet öffnen und auf „Offline bereit“ warten. Danach im Flugmodus testen. Eine lokale HTML-Datei kann keine Offline-Web-App installieren.</p></details>
+<footer><span>Für den Blick neben dem Spiel · offline nach Erstaufruf</span><button type="button" class="print" onclick="window.print()">Drucken</button></footer>
+</main>
+<script>
+(()=>{'use strict';const rows=[...document.querySelectorAll('tbody tr')],band=document.querySelector('.band'),board=document.querySelector('.board'),status=document.querySelector('.status');let selected=-1;
+function show(i){rows.forEach((r,n)=>{r.classList.toggle('chosen',n===i);r.querySelector('button').setAttribute('aria-pressed',String(n===selected))});if(i<0){band.style.display='none';return}const a=rows[i].getBoundingClientRect(),b=board.getBoundingClientRect();Object.assign(band.style,{display:'block',top:(a.top-b.top)+'px',height:a.height+'px'})}
+rows.forEach((r,i)=>{r.addEventListener('mouseenter',()=>show(i));r.querySelector('button').addEventListener('click',()=>{selected=selected===i?-1:i;show(selected);status.textContent=selected<0?'Qualität links anklicken, um eine Zeile zu markieren.':selected===0?'Unverbessert: Alle Gegenstände nur herstellen und unverbessert lassen.':r.querySelector('button').textContent+': Grüne Felder unverbessert lassen; blaue Felder bis '+r.querySelector('button').textContent+' verbessern.'})});board.addEventListener('mouseleave',()=>show(selected));window.addEventListener('resize',()=>show(selected));})();
+</script>
+<script>
+(()=>{'use strict';
+const names=['Leder','Eisen','Stahl','Orkisch','Zwergisch'];
+const rows=[...document.querySelectorAll('tbody tr')], remaining=[0,0,0,0,0];
+rows.forEach(row=>{let col=0;[...row.querySelectorAll('td')].forEach(cell=>{while(remaining[col]>0)col++;cell.dataset.material=col;remaining[col]=cell.rowSpan;col++});remaining.forEach((v,i)=>remaining[i]=Math.max(0,v-1))});
+document.querySelectorAll('thead th:not(:first-child)').forEach((el,i)=>el.dataset.material=i);
+document.querySelectorAll('col:not(:first-child)').forEach((el,i)=>el.dataset.material=i);
+const nav=document.querySelector('.materials');
+names.forEach((name,i)=>{const b=document.createElement('button');b.type='button';b.textContent=name;b.setAttribute('aria-pressed','false');b.addEventListener('click',()=>choose(i));nav.append(b)});
+function choose(i){document.querySelectorAll('[data-material]').forEach(el=>el.classList.toggle('active-material',Number(el.dataset.material)===i));[...nav.children].forEach((b,n)=>b.setAttribute('aria-pressed',String(n===i)));window.dispatchEvent(new Event('resize'))}
+document.documentElement.classList.add('mobile-ready');choose(0);
+const state=document.querySelector('.offline-state');
+async function offline(){
+ if(!('serviceWorker' in navigator)||!window.isSecureContext||location.protocol==='file:'){state.textContent='Lokale Ansicht · Für Installation und Offline-App bitte über HTTPS öffnen.';return}
+ try{await navigator.serviceWorker.register('./sw.js',{scope:'./'});await navigator.serviceWorker.ready;state.textContent='Offline bereit · Auf diesem Gerät gespeichert.';navigator.serviceWorker.addEventListener('controllerchange',()=>{state.textContent='Offline bereit · Auf diesem Gerät gespeichert.'})}catch(e){state.textContent='Offline-Speicherung nicht verfügbar. Bitte mit Internet erneut öffnen.'}
+}offline();
+})();
+</script>
+</body>
+</html>
